@@ -1,0 +1,24 @@
+<h1 class="title" style="padding-bottom: 20px">
+    VOTAÇÃO
+</h1>
+
+<div class="row">
+        
+    <div class="card" style="width: 18rem; background-color: blue; margin-right: 7vw">
+        <div class="card-body">
+            <%= link_to 'Clique aqui para votar na cor azul', azul_path, method: :azul, class: 'card-text', style: 'color: white' %>
+        </div>
+    </div>
+        
+    <div class="card" style="width: 18rem; background-color: red; margin-right: 7vw">
+        <div class="card-body">
+            <%= link_to 'Clique para votar no vermelho', vermelho_path, method: :vermelho, class: 'card-text', style: 'color: white' %>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem; background-color: yellow">
+        <div class="card-body">
+            <%= link_to 'Clique aqui para votar no amarelo', amarelo_path, method: :amarelo, class: 'card-text', style: 'color: black' %>
+        </div>
+    </div>
+    
+</div>

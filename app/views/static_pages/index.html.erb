@@ -1,1 +1,19 @@
-<h1><%= current_user.name if is_user_logged? %></h1>
+<% if !is_user_logged? %>
+    <div class="card">
+        <h5 class="card-header">Faça login!</h5>
+        <div class="card-body">
+            <h5 class="card-title">Entre em sua conta para votar</h5>
+            <p class="card-text">Você só pode votar se estiver em uma conta. Caso não a possua, clique <%= link_to 'Aqui', new_user_path %></p>
+            <%= link_to 'Login', new_session_path, class: 'btn btn-primary' %>
+        </div>
+    </div>
+<% else %>
+    <div class="card">
+        <h5 class="card-header">Vote!</h5>
+        <div class="card-body">
+            <h5 class="card-title">Bem vindo, <%= current_user.name %></h5>
+            <p class="card-text">Caso não tenha votado, vote agora mesmo clicando no botão abaixo. Caso já tenha, verifique os resultados.</p>
+            <%= link_to 'Votação', votar_path, class: 'btn btn-primary' %>
+        </div>
+    </div>
+<% end %>

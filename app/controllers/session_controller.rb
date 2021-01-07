@@ -9,10 +9,10 @@ class SessionController < ApplicationController
 
         if user && user.authenticate(params[:session][:password])
             sign_in(user)
-            flash[:sucess] = 'Logado com sucesso. Bem vindo!'
+            flash[:success] = 'Logado com sucesso. Bem vindo!'
             redirect_to root_path
         else
-            flash.now[:error] = 'Erro ao logar. Dados inválidos.'
+            flash.now[:notice] = 'Erro ao logar. Dados inválidos.'
             render 'new'
         end
     end

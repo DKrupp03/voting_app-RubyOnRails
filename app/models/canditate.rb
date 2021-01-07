@@ -1,0 +1,2 @@
+class Canditate < ApplicationRecord
+end

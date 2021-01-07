@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    before_action :require_logged_in_user, only: [:edit, :update, :destroy]
+
     def index
         @user = current_user
     end
@@ -12,7 +14,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            flash[:sucess] = 'Conta criada com sucesso!'
+            flash[:success] = 'Conta criada com sucesso!'
             redirect_to root_path
         else
             render 'new'
@@ -34,10 +36,10 @@ class UsersController < ApplicationController
 
     def destroy
         if current_user.destroy
-           flash[:sucess] = 'Conta deletada com sucesso!'
-            redirect_to users_path
+           flash[:success] = 'Conta deletada com sucesso!'
+            redirect_to root_path
         else
-           flash[:error] = 'Erro ao detetar conta!'
+           flash[:notice] = 'Erro ao detetar conta!'
         end
     end
 

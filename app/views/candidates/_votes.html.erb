@@ -1,0 +1,32 @@
+<%
+
+@azul = Canditate.find_by(name: "azul")
+@vermelho = Canditate.find_by(name: "vermelho")
+@amarelo = Canditate.find_by(name: "amarelo")
+
+%>
+
+<h1 class="title" style="padding-bottom: 20px">
+    RESULTADO PARCIAL DA VOTAÇÃO
+</h1>
+
+<div class="row">
+        
+    <div class="card" style="width: 18rem; background-color: blue; margin-right: 7vw">
+        <div class="card-body">
+            <p class="card-text" style="color: white"><%= @azul.votes %></p>
+        </div>
+    </div>
+        
+    <div class="card" style="width: 18rem; background-color: red; margin-right: 7vw">
+        <div class="card-body">
+            <p class="card-text" style="color: white"><%= @vermelho.votes %></p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem; background-color: yellow">
+        <div class="card-body">
+            <p class="card-text" style="color: black"><%= @amarelo.votes %></p>
+        </div>
+    </div>
+    
+</div>

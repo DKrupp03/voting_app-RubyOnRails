@@ -2,7 +2,7 @@
     EDITAR
 </h1>
 
-<%= form_for @user do |f| %>
+<%= form_for current_user do |f| %>
     <%= render 'form', f: f %>
     <%= f.submit 'Atualizar', class: 'btn btn-primary' %>
 <% end %>
