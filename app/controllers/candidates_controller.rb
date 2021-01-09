@@ -53,7 +53,6 @@ class CandidatesController < ApplicationController
     private
         def verify_if_already_voted
             if current_user.voted == 1
-                flash[:notice] = "Seu voto já foi contabilizado!"
                 redirect_to resultado_path
             else
                 
